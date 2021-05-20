@@ -3,13 +3,13 @@
   height: 432px;
   display: flex;
   flex-direction: column;
-	margin-top: 12px;
+	margin: 12px 85px 0 0;
 }
 
 .profile__photo {
   width: 281px;
   height: 280px;
-  border-radius: 80px;
+  border-radius: 80%;
   object-fit: cover;
 }
 

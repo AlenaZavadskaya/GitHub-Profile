@@ -1,0 +1,20 @@
+.main {
+  display: flex;
+  padding: 28px 56px 0;
+  /* justify-content: space-between; */
+}
+
+.main__header {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 42px;
+  color: #000000;
+  margin: 0 0 29px;
+  display: inline-table;
+}
+
+.main__container {
+  width: 877px;
+}
