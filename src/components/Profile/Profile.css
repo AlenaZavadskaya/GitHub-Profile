@@ -1,0 +1,78 @@
+.profile {
+  width: 292px;
+  height: 432px;
+  display: flex;
+  flex-direction: column;
+	margin-top: 12px;
+}
+
+.profile__photo {
+  width: 281px;
+  height: 280px;
+  border-radius: 80px;
+  object-fit: cover;
+}
+
+.profile__fullName {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 34px;
+  color: #000000;
+	margin: 28px 0 12px;
+}
+
+.profile__name {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #0064eb;
+  margin: 0 0 25px;
+  transition: 0.1s linear 0.1s;
+}
+
+.profile__name:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.profile__social {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__social-followers {
+  display: flex;
+}
+
+.profile__social-followers_icon {
+  background: url(../../images/group.svg) no-repeat;
+  width: 24px;
+  height: 24px;
+  margin: 0 8px 0 0;
+  background-position: center;
+}
+
+.profile__social-following {
+  display: flex;
+}
+
+.profile__social-following_icon {
+  background: url(../../images/provate.svg) no-repeat;
+  width: 24px;
+  height: 24px;
+  margin: 0 8px 0 0;
+  background-position: center;
+}
+
+.profile__social_number {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
