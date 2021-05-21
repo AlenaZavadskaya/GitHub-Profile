@@ -16,5 +16,5 @@
 }
 
 .main__container {
-  width: 877px;
+  width: calc(100% - 56px);
 }

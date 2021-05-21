@@ -16,7 +16,14 @@ function Profile(props) {
         alt={props.name}
       />
       <h2 className="profile__fullName">{props.name}</h2>
-      <p className="profile__name">{props.login}</p>
+      <a
+        href={props.link}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        className="profile__name"
+      >
+        {props.login}
+      </a>
       <div className="profile__social">
         <div className="profile__social-followers">
           <div className="profile__social-followers_icon" />

@@ -13,15 +13,14 @@ function App() {
   function getUserName(username) {
     Promise.all([api.getUserInfo(username), api.getUserRepos(username)])
       .then((values) => {
-        const [userData, userRepos] = values;
-        console.log("1", userData);
-        console.log("2", userRepos);
+        const [user, userRepos] = values;
         setCurrentUser({
-          name: userData.name,
-          login: userData.login,
-          avatar: userData.avatar_url,
-          followers: userData.followers,
-          following: userData.following,
+          name: user.name,
+          login: user.login,
+          avatar: user.avatar_url,
+          followers: user.followers,
+          following: user.following,
+          link: user.html_url,
         });
         setRepos(userRepos);
       })
