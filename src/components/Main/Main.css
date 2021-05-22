@@ -1,7 +1,6 @@
 .main {
   display: flex;
   padding: 28px 56px 0;
-  /* justify-content: space-between; */
 }
 
 .main__header {

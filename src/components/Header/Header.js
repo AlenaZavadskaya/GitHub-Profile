@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import Logo from "../../images/Vector.svg";
 
@@ -17,7 +18,7 @@ function Header(props) {
 
   return (
     <header className="header">
-      <img className="header__logo" src={Logo} alt="логотип" />
+      <Link to="/"><img className="header__logo" src={Logo} alt="логотип" /></Link>
       <form className="header__search-form" onSubmit={handleSubmit}>
         <label className="header__search-form_field">
           <button
