@@ -3,11 +3,11 @@
   height: 432px;
   display: flex;
   flex-direction: column;
-	margin: 12px 85px 0 0;
+  margin: 12px 85px 0 0;
 }
 
 .profile__photo {
-  width: 281px;
+  width: 280px;
   height: 280px;
   border-radius: 80%;
   object-fit: cover;
@@ -20,7 +20,7 @@
   font-size: 26px;
   line-height: 34px;
   color: #000000;
-	margin: 28px 0 12px;
+  margin: 28px 0 12px;
 }
 
 .profile__name {
@@ -31,7 +31,7 @@
   line-height: 22px;
   color: #0064eb;
   margin: 0 0 25px;
-	text-decoration: none;
+  text-decoration: none;
   transition: 0.1s linear 0.1s;
 }
 
@@ -76,4 +76,76 @@
   font-size: 16px;
   line-height: 24px;
   margin: 0;
+}
+
+@media screen and (max-width: 770px) {
+  .profile {
+    margin: 12px 45px 0 0;
+  }
+
+  .profile__photo {
+    width: 230px;
+    height: 230px;
+  }
+
+  .profile__fullName {
+    font-size: 22px;
+    line-height: 30px;
+    margin: 24px 0 10px;
+  }
+
+  .profile__name {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 21px;
+  }
+
+  .profile__social-followers_icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 4px 0 0;
+  }
+
+  .profile__social-following_icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 4px 0 0;
+  }
+
+  .profile__social_number {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .profile {
+    align-items: center;
+    height: min-content;
+    margin: 0 0 50px;
+  }
+
+  .profile__photo {
+    width: 280px;
+    height: 280px;
+  }
+
+  .profile__fullName {
+    margin: 18px 0 8px;
+  }
+
+  .profile__name {
+    margin: 0 0 16px;
+  }
+
+  .profile__social-followers {
+    margin-right: 12px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .profile__photo {
+    width: 230px;
+    height: 230px;
+  }
 }

@@ -1,23 +1,20 @@
 .not-found {
-	display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-	margin-left: -50px;
-  margin-top: -50px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  justify-content: center;
+  height: calc(100vh - 74px);
 }
 
 .not-found__icon {
-	background: url(../../images/user.svg) no-repeat center;
+  background: url(../../images/user.svg) no-repeat center;
   width: 110px;
   height: 110px;
   margin-bottom: 24px;
 }
 
 .not-found__text {
-	font-family: Inter;
+  font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 22px;
@@ -27,4 +24,21 @@
   max-width: 210px;
   width: 100%;
   margin: 0;
+}
+
+@media screen and (max-width: 625px) {
+  .not-found {
+    height: calc(100vh - 64px);
+  }
+
+  .not-found__icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .not-found__text {
+    font-size: 17px;
+    line-height: 120%;
+  }
 }

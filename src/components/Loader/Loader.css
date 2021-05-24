@@ -20,3 +20,10 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 625px) {
+  .loader {
+    width: 90px;
+    height: 90px;
+  }
+}

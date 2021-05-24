@@ -17,3 +17,79 @@
 .main__container {
   width: calc(100% - 56px);
 }
+
+.main__container-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__paginate {
+  display: flex;
+  justify-content: flex-end;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  align-items: center;
+  color: #808080;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  align-items: center;
+  margin: 0 0 0 16px;
+  padding: 0;
+}
+
+.element__active {
+  padding: 2px 6px;
+  background: #0064eb;
+  border-radius: 3px;
+}
+
+.element {
+  display: flex;
+  align-items: center;
+  margin: 0 16px;
+}
+
+@media screen and (max-width: 770px) {
+  .main__header {
+    font-size: 25px;
+    line-height: 38px;
+    margin: 0 0 24px;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 16px 24px;
+  }
+
+  .main__container {
+    width: calc(100% - 16px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main__header {
+    text-align: center;
+    margin: 0 0 22px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .main {
+    padding: 28px 16px 0;
+  }
+
+  .main__container {
+    width: calc(100% - 16px);
+  }
+}
