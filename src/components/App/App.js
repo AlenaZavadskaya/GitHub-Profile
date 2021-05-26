@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
-import * as api from "./Api";
-import CurrentUserContext from "../src/contexts/CurrentUserContext";
-import NotFound from "./components/NotFound/NotFound";
-import InitialState from "./components/InitialState/InitialState";
-import Loader from "./components/Loader/Loader";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
+import * as api from "../../Api";
+import NotFound from "../NotFound/NotFound";
+import InitialState from "../InitialState/InitialState";
+import Loader from "../Loader/Loader";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -22,7 +21,7 @@ function App() {
 
   function getUserName(username) {
     setIsLoading(true);
-    Promise.all([api.getUserInfo(username), api.getUserRepos(username)])
+    Promise.all([api.getUserInfo(username), api.getUserRepos(username, 1)])
       .then((values) => {
         const [user, userRepos] = values;
         setCurrentUser({
@@ -32,6 +31,7 @@ function App() {
           followers: user.followers,
           following: user.following,
           link: user.html_url,
+          repositories: user.public_repos,
         });
         setRepos(userRepos);
         setIsLoading(false);
@@ -47,7 +47,7 @@ function App() {
   }
 
   return (
-    <CurrentUserContext.Provider value={currentUser}>
+    <>
       <Header onGetUserName={getUserName} />
       <Switch>
         <Route exact path="/">
@@ -62,7 +62,7 @@ function App() {
         </Route>
         <Route path="*">{isLoading ? <Loader /> : <NotFound />}</Route>
       </Switch>
-    </CurrentUserContext.Provider>
+    </>
   );
 }
 

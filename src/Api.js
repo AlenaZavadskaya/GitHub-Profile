@@ -5,9 +5,9 @@ const headers = {
 };
 
 const getResponse = (res) => {
-	if (res.ok) {
+  if (res.ok) {
     return res.json();
-	}
+  }
   return Promise.reject(res.status);
 };
 
@@ -19,7 +19,7 @@ export const getUserInfo = (username) => {
 };
 
 export const getUserRepos = (username) => {
-  return fetch(`${URL}/users/${username}/repos`, {
+  return fetch(`${URL}/users/${username}/repos?per_page=100&page=1`, {
     method: "GET",
     headers: headers,
   }).then((res) => getResponse(res));

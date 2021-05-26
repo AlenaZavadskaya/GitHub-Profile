@@ -45,16 +45,47 @@
   padding: 0;
 }
 
-.element__active {
+.pagination__element-active {
   padding: 2px 6px;
   background: #0064eb;
   border-radius: 3px;
 }
 
-.element {
+.pagination__element {
   display: flex;
   align-items: center;
   margin: 0 16px;
+}
+
+.pagination__element:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.previous {
+  color: #0064eb;
+}
+
+.next {
+  color: #0064eb;
+}
+
+.previous.disabled {
+  color: #808080;
+}
+
+.next.disabled {
+  color: #808080;
+}
+
+.previous:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.next:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 770px) {
@@ -81,15 +112,5 @@
   .main__header {
     text-align: center;
     margin: 0 0 22px;
-  }
-}
-
-@media screen and (max-width: 440px) {
-  .main {
-    padding: 28px 16px 0;
-  }
-
-  .main__container {
-    width: calc(100% - 16px);
   }
 }

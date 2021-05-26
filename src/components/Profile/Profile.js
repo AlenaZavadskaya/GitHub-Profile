@@ -15,7 +15,7 @@ function Profile(props) {
         src={props.avatar}
         alt={props.name}
       />
-      <h2 className="profile__fullName">{props.name}</h2>
+      <h2 className="profile__full-name">{props.name}</h2>
       <a
         href={props.link}
         target="_blank"
@@ -26,12 +26,12 @@ function Profile(props) {
       </a>
       <div className="profile__social">
         <div className="profile__social-followers">
-          <div className="profile__social-followers_icon" />
-          <p className="profile__social_number">{props.followers} followers</p>
+          <div className="profile__social-followers-icon" />
+          <p className="profile__social-number">{props.followers} followers</p>
         </div>
         <div className="profile__social-following">
-          <div className="profile__social-following_icon" />
-          <p className="profile__social_number">{props.following} following</p>
+          <div className="profile__social-following-icon" />
+          <p className="profile__social-number">{props.following} following</p>
         </div>
       </div>
     </section>
