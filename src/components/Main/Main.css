@@ -34,6 +34,7 @@
   line-height: 21px;
   align-items: center;
   color: #808080;
+  position: relative;
 }
 
 .pagination {
@@ -88,11 +89,35 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 1280px) {
+  .main {
+    padding: 28px 30px 24px;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .main__paginate {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .pagination__element {
+    margin: 0 15px;
+  }
+}
+
 @media screen and (max-width: 770px) {
   .main__header {
     font-size: 25px;
     line-height: 38px;
     margin: 0 0 24px;
+  }
+}
+
+@media screen and (max-width: 656px) {
+  .main__paginate {
+    font-size: 10px;
+    line-height: 18px;
   }
 }
 
@@ -112,5 +137,21 @@
   .main__header {
     text-align: center;
     margin: 0 0 22px;
+  }
+
+  .main__paginate {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .main__paginate {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  .pagination__element {
+    margin: 0 13px;
   }
 }

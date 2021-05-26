@@ -78,6 +78,30 @@
   margin: 0;
 }
 
+@media screen and (max-width: 1024px) {
+	.profile__photo {
+    width: 270px;
+    height: 270px;
+  }
+
+	.profile__social-followers-icon {
+    width: 22px;
+    height: 22px;
+    margin: 0 4px 0 0;
+  }
+
+  .profile__social-following-icon {
+    width: 22px;
+    height: 22px;
+    margin: 0 4px 0 0;
+  }
+
+  .profile__social-number {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
 @media screen and (max-width: 770px) {
   .profile {
     margin: 12px 45px 0 0;
@@ -103,13 +127,11 @@
   .profile__social-followers-icon {
     width: 20px;
     height: 20px;
-    margin: 0 4px 0 0;
   }
 
   .profile__social-following-icon {
     width: 20px;
     height: 20px;
-    margin: 0 4px 0 0;
   }
 
   .profile__social-number {

@@ -12,7 +12,10 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [repos, setRepos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isPaginationLoading, setIsPaginationLoading] = useState(false);
   const history = useHistory();
+  console.log(currentUser);
+  console.log(repos);
 
   useEffect(() => {
     history.push("/");
@@ -21,7 +24,7 @@ function App() {
 
   function getUserName(username) {
     setIsLoading(true);
-    Promise.all([api.getUserInfo(username), api.getUserRepos(username, 1)])
+    Promise.all([api.getUserInfo(username), api.getUserRepos(username)])
       .then((values) => {
         const [user, userRepos] = values;
         setCurrentUser({
@@ -46,18 +49,42 @@ function App() {
       });
   }
 
+  function getNextPage(pageNumber) {
+    setIsPaginationLoading(true);
+    api
+      .getUserRepos(currentUser.login, pageNumber)
+      .then((repos) => {
+        setRepos(repos);
+        setIsPaginationLoading(false);
+        history.push("/profile");
+      })
+      .catch((err) => {
+        if (err === 404) {
+          setIsPaginationLoading(false);
+          history.push("*");
+        }
+        console.log(`Ошибка: ${err}`);
+      });
+  }
+
   return (
     <>
       <Header onGetUserName={getUserName} />
       <Switch>
         <Route exact path="/">
-          {isLoading ? <Loader /> : <InitialState />}
+          {isLoading ? <Loader className="loader" /> : <InitialState />}
         </Route>
         <Route path="/profile">
           {isLoading ? (
-            <Loader />
+            <Loader className="loader" />
           ) : (
-            <Main user={currentUser} repos={repos} isLoading={isLoading} />
+            <Main
+              user={currentUser}
+              repos={repos}
+              isLoading={isLoading}
+              isPaginationLoading={isPaginationLoading}
+              getNextPage={getNextPage}
+            />
           )}
         </Route>
         <Route path="*">{isLoading ? <Loader /> : <NotFound />}</Route>

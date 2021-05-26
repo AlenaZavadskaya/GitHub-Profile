@@ -18,8 +18,8 @@ export const getUserInfo = (username) => {
   }).then((res) => getResponse(res));
 };
 
-export const getUserRepos = (username) => {
-  return fetch(`${URL}/users/${username}/repos?per_page=100&page=1`, {
+export const getUserRepos = (username, pageNumber = 1) => {
+  return fetch(`${URL}/users/${username}/repos?per_page=4&page=${pageNumber}`, {
     method: "GET",
     headers: headers,
   }).then((res) => getResponse(res));
