@@ -4,9 +4,6 @@
 
 ## [Ссылка на сайт](https://github-profile-chi.vercel.app/)
 
-При переключении пагинации я использовала следующий лоадинг:
-![](src/images/pagination_loader.png)
-
 ### :rocket: Установка и запуск проекта
 
 _1. клонируйте репозиторий:_<br/>
@@ -21,10 +18,10 @@ _4. запустите сервер:_<br/>
 ### :computer: Технологии
 
 - React
-- JavaScript
 - Functional components
 - React Pagination
+- JSX
+- JavaScript
 - CSS
 - Flexbox
-- JSX
 - BEM

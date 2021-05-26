@@ -35,8 +35,8 @@
   top: 50%;
   border-radius: 50%;
   position: relative;
-  -webkit-animation: loader-2 0.9s 0.35s ease alternate infinite;
-  animation: loader-2 0.9s 0.35s ease alternate infinite;
+  -webkit-animation: loader-2 0.2s 0.1s ease alternate infinite;
+  animation: loader-2 0.2s 0.1s ease alternate infinite;
   margin: -30px auto 0;
 }
 
@@ -61,18 +61,18 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  animation: loader-2 0.9s ease alternate infinite;
-  -webkit-animation: loader-2 0.9s ease alternate infinite;
+  animation: loader-2 0.2s ease alternate infinite;
+  -webkit-animation: loader-2 0.2s ease alternate infinite;
 }
 
 .loader-2:before {
   left: -30px;
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 
 .loader-2:after {
   right: -30px;
-  animation-delay: 0.5s;
+  animation-delay: 0.2s;
 }
 
 @keyframes loader-2 {

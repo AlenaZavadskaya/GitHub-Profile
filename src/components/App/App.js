@@ -14,15 +14,13 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isPaginationLoading, setIsPaginationLoading] = useState(false);
   const history = useHistory();
-  console.log(currentUser);
-  console.log(repos);
 
   useEffect(() => {
     history.push("/");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function getUserName(username) {
+  function getUserData(username) {
     setIsLoading(true);
     Promise.all([api.getUserInfo(username), api.getUserRepos(username)])
       .then((values) => {
@@ -69,7 +67,7 @@ function App() {
 
   return (
     <>
-      <Header onGetUserName={getUserName} />
+      <Header onGetUserName={getUserData} />
       <Switch>
         <Route exact path="/">
           {isLoading ? <Loader className="loader" /> : <InitialState />}

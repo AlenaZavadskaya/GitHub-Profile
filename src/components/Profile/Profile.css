@@ -79,12 +79,12 @@
 }
 
 @media screen and (max-width: 1024px) {
-	.profile__photo {
+  .profile__photo {
     width: 270px;
     height: 270px;
   }
 
-	.profile__social-followers-icon {
+  .profile__social-followers-icon {
     width: 22px;
     height: 22px;
     margin: 0 4px 0 0;
