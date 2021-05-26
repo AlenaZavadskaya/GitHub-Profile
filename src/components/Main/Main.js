@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 import Card from "../Card/Card";
-import "../Card/Card.css";
 import EmptyState from "../EmptyState/EmptyState";
 import Profile from "../Profile/Profile";
-import "../Profile/Profile.css";
 import "./Main.css";
 
 function Main(props) {
   const [offset, setOffset] = useState(0);
-  const [perPage] = useState(4);
-  const [counter, setCounter] = useState(0);
+	const [counter, setCounter] = useState(0);
+	const perPage = 4;
+	let repositories = props.user.repositories;
 
   const handlePageClick = (e) => {
     const selectedPage = e.selected;
@@ -40,14 +39,14 @@ function Main(props) {
             following={props.user.following}
             link={props.user.link}
           />
-          {props.repos.length === 0 ? (
+          {repositories === 0 ? (
             <div className="main__container main__container-empty">
               <EmptyState />
             </div>
           ) : (
             <div className="main__container">
               <h1 className="main__header">
-                Repositories ({props.repos.length})
+                Repositories ({repositories})
               </h1>
               {props.repos
                 .slice(offset * perPage, offset * perPage + perPage)
@@ -60,11 +59,11 @@ function Main(props) {
                     key={repo.id}
                   />
                 ))}
-              {props.repos.length > 5 && (
+              {repositories > perPage && (
                 <div className="main__paginate">
                   {`${offset * perPage + 1}-${
-                    counter ? props.repos.length : (offset + 1) * perPage
-                  } of ${props.repos.length}`}
+                    counter ? repositories : (offset + 1) * perPage
+                  } of ${repositories}`}
                   <ReactPaginate
                     previousLabel={"<"}
                     nextLabel={">"}
@@ -75,8 +74,8 @@ function Main(props) {
                     pageRangeDisplayed={2}
                     onPageChange={handlePageClick}
                     containerClassName={"pagination"}
-                    activeClassName={"element__active"}
-                    pageClassName={"element"}
+                    activeClassName={"pagination__element-active"}
+                    pageClassName={"pagination__element"}
                   />
                 </div>
               )}
