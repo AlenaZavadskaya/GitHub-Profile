@@ -1,8 +1,4 @@
-const URL = "https://api.github.com";
-const headers = {
-  Accept: "application/json",
-  "Content-Type": "application/json",
-};
+import { URL, headers, perPage } from "../utils/config";
 
 const getResponse = (res) => {
   if (res.ok) {
@@ -19,8 +15,11 @@ export const getUserInfo = (username) => {
 };
 
 export const getUserRepos = (username, pageNumber = 1) => {
-  return fetch(`${URL}/users/${username}/repos?per_page=4&page=${pageNumber}`, {
-    method: "GET",
-    headers: headers,
-  }).then((res) => getResponse(res));
+  return fetch(
+    `${URL}/users/${username}/repos?per_page=${perPage}&page=${pageNumber}`,
+    {
+      method: "GET",
+      headers: headers,
+    }
+  ).then((res) => getResponse(res));
 };

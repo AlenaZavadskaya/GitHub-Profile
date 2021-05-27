@@ -5,11 +5,11 @@ import EmptyState from "../EmptyState/EmptyState";
 import Loader from "../Loader/Loader";
 import Profile from "../Profile/Profile";
 import "./Main.css";
+import { perPage } from "../../utils/config";
 
 function Main(props) {
   const [pageNumber, setPageNumber] = useState(0);
   const [counter, setCounter] = useState(0);
-  const perPage = 4;
   let repositories = props.user.repositories;
 
   function handlePageClick(e) {

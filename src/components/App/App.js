@@ -3,7 +3,7 @@ import { Route, Switch, useHistory } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import * as api from "../../Api";
+import * as api from "../../utils/Api";
 import NotFound from "../NotFound/NotFound";
 import InitialState from "../InitialState/InitialState";
 import Loader from "../Loader/Loader";
